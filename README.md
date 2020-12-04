@@ -2,6 +2,11 @@
 
 An app to motivate people to move. Every exercise will lead to a unique artwork, defined by data generated during the activity.
 
+## results
+
+### prototypes
+* [figma preview](https://www.figma.com/proto/WYDb05fnAC96XIkWVNVKRC/Designathon-Walk?node-id=1%3A6&scaling=scale-down)
+
 
 ## resources
 
