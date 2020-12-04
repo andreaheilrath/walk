@@ -11,5 +11,8 @@ An app to motivate people to move. Every exercise will lead to a unique artwork,
 * [react native sensors](https://github.com/react-native-sensors/react-native-sensors)
 * [create react app](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app)
 
+* [node.js](nodejs.org/)
+* [npm](https://www.npmjs.com)
+
 ## other
 
