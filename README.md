@@ -15,6 +15,11 @@ An app to motivate people to move. Every exercise will lead to a unique artwork,
 
 ## resources
 
+### benefits of walking
+* [Importance of Walking to Public Health](https://onwardsoutdoors.com/wp-content/uploads/2019/05/The_Importance_of_Walking_to_Public_Health.2.pdf)
+* [Benefits of Walking](https://www.consumerreports.org/exercise-fitness/benefits-of-walking/)
+* [The effect of a pedometer-based community walking intervention "Walking for Wellbeing in the West" on physical activity levels and health outcomes: a 12-week randomized controlled trial](https://link.springer.com/article/10.1186/1479-5868-5-44)
+
 ### tools
 * [p5](https://p5js.org)
 * react [homepage](https://reactjs.org) - [docs](https://reactjs.org/docs/getting-started.html) - [git](https://github.com/facebook/react)
@@ -22,13 +27,7 @@ An app to motivate people to move. Every exercise will lead to a unique artwork,
 * [create react app](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app)
 * [node.js](nodejs.org/)
 * [npm](https://www.npmjs.com)
-
-### benefits of walking - press
-* [Importance of Walking to Public Health](https://onwardsoutdoors.com/wp-content/uploads/2019/05/The_Importance_of_Walking_to_Public_Health.2.pdf)
-
-### scientific papers
-* [Benefits of Walking](https://www.consumerreports.org/exercise-fitness/benefits-of-walking/)
-* [The effect of a pedometer-based community walking intervention "Walking for Wellbeing in the West" on physical activity levels and health outcomes: a 12-week randomized controlled trial](https://link.springer.com/article/10.1186/1479-5868-5-44)
+* [react-p5js](https://github.com/atorov/react-p5js)
 
 ### video tutorials
 * [react native GPS](https://www.youtube.com/watch?v=MqLC0kOqrwk)
