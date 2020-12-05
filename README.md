@@ -16,6 +16,7 @@ An app to motivate people to move. Every exercise will lead to a unique artwork,
 ## resources
 
 ### tools
+* [p5](https://p5js.org)
 * react [homepage](https://reactjs.org) - [docs](https://reactjs.org/docs/getting-started.html) - [git](https://github.com/facebook/react)
 * [react native sensors](https://github.com/react-native-sensors/react-native-sensors)
 * [create react app](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app)
