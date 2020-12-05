@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>p5 Dimensions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.min.js"></script>
+    <script language="javascript" type="text/javascript" src="libraries/p5.dimensions.js"></script>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #f8f8f8;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            padding: 16px;
+        }
+        
+        .dimension-input {
+            width: 20px;
+        }
+        
+        .content {
+            max-width: 600px;
+            margin: auto;
+            display: block;
+        }
+        
+        p,
+        h1,
+        label,
+        input,
+        span {
+            color: rgba(0, 0, 0, 0.7);
+            font-weight: 100;
+        }
+        
+        p {
+            line-height: 2em;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        h1 span {
+            font-size: 110%;
+            color: rgba(0, 0, 0, 0.5);
+            font-weight: 100;
+        }
+        
+        input {
+            border: 0;
+            padding: 4px;
+            text-align: center;
+        }
+        
+        .function-summary {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-left: 1em;
+        }
+        
+        .function-summary li {
+            position: relative;
+        }
+        
+        .function-summary li span {
+            display: block;
+            background-color: white;
+            position: absolute;
+            max-width: 300px;
+            padding: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: -10;
+            bottom: 90%;
+            left: -10px;
+            font-size: 80%;
+            color: rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            transition: opacity 0.2s;
+            box-sizing: border-box;
+        }
+        
+        .function-summary li pre:hover+span {
+            opacity: 1;
+            z-index: 10;
+        }
+        
+        .function-summary li pre {
+            display: inline-block;
+        }
+        
+        input {
+            margin-left: 0.5em;
+            margin-right: 1em;
+            border-radius: 4px;
+            box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2) inset;
+            background-color: white;
+            display: inline-block;
+        }
+        
+        label {
+            margin: 0.5em 0;
+            display: inline-block;
+        }
+        
+        #output span {
+            margin-top: 0.5em;
+            margin-right: 0.5em;
+            padding: 4px;
+            border-radius: 4px;
+            box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+            background-color: white;
+        }
+        
+        #OutX:before {
+            content: "X: ";
+        }
+        
+        #OutY:before {
+            content: "Y: ";
+        }
+        
+        #OutZ:before {
+            content: "Z: ";
+        }
+        
+        #OutA:before {
+            content: "A: ";
+        }
+        
+        #output span#OutA:after {
+            content: "";
+        }
+        
+        footer {
+            border: 0px solid rgba(0, 0, 0, 0.2);
+            border-top-width: 2px;
+        }
+        
+        footer p {
+            text-align: center;
+            font-size: 70%;
+            color: rgba(0, 0, 0, 0.5);
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1><span>Welcome,</span><br />Dimension Hopper</h1>
+        <p>This addon to p5.js is intended to extend the p5 vector functions to any number of dimensions. The example below shows the addition of two points in 4 dimensions, but you're not limited to 4, you can use as many as you like! <sub>As long as it is less than 52.</sub>Try
+            changing the numbers and seeing the output.</p>
+        <form onsubmit="calculate(); return false;" autocomplete="off">
+            <label>First Point:</label><br />
+            <label>X:</label><input type="number" class="dimension-input" id="dimIn1" value="3" />
+            <label>Y:</label><input type="number" class="dimension-input" id="dimIn2" value="1" />
+            <label>Z:</label><input type="number" class="dimension-input" id="dimIn3" value="4" />
+            <label>A:</label><input type="number" class="dimension-input" id="dimIn4" value="1" />
+            <br />
+            <br />
+            <label>Second Point:</label><br />
+            <label>X:</label><input type="number" class="dimension-input" id="dimIn5" value="5" />
+            <label>Y:</label><input type="number" class="dimension-input" id="dimIn6" value="9" />
+            <label>Z:</label><input type="number" class="dimension-input" id="dimIn7" value="2" />
+            <label>A:</label><input type="number" class="dimension-input" id="dimIn8" value="6" />
+            <!--<input type="submit" value="Calculate Distance"/> -->
+            <br />
+            <br />
+            <label>Sum:</label>
+            <div id="output">
+                <span id="OutX">0.00</span>
+                <span id="OutY">0.00</span>
+                <span id="OutZ">0.00</span>
+                <span id="OutA">0.00</span>
+            </div>
+        </form>
+        <p>The function used to do the calculations above looks like this: </p>
+        <pre>result = nAdd(pos1, pos2);</pre>
+        <p>And the vectors can be created like this:</p>
+        <pre>var pos1 = nVector(3, 1, 4, 1);</pre>
+        <p>Currently I believe all the standard vector functions in p5 can be used in the same way using this addon, but if you find a bug please let us know at <a href="https://github.com/Smilebags/p5.dimensions.js/issues">our GitHub repo</a>.</p>
+        <p>Some of the functions in this addon are as follows: (hover for more info)</p>
+        <ul class="function-summary">
+            <li><pre>nDist(v1, v2)</pre><span>Returns the euclidean distance between the two vectors.</span></li>
+            <li><pre>nDistSq(v1, v2)</pre><span>Returns the distance squared between the points; used where speed is important and comparing distance is all that is needed.</span></li>
+            <li><pre>nDot(v1, v2)</pre><span>Returns the dot product of the two vectors.</span></li>
+            <li><pre>nLerp(v1, v2, percent)</pre><span>Blends between two vectors by the percentage given.</span></li>
+            <li><pre>nAdd(v1, v2)</pre><span>Returns the sum of the two vectors.</span></li>
+            <li><pre>nSub(v1, v2)</pre><span>Returns the first vector minus the second vector.</span></li>
+            <li><pre>nMul(v1, value)</pre><span>Multiplies the vector's magnitude by the value.</span></li>
+            <li><pre>nDiv(v1, value)</pre><span>Divides the vector 's magnitude by the value.</span></li>
+            <li><pre>nSetMag(v1, magnitude)</pre><span>Returns the vector with the specified magnitude.</span></li>
+            <li><pre>nCross(v1, v2)</pre><span>Returns the cross product of 3 dimensional vectors.</span></li>
+            <li><pre>nEqual(v1, v2)</pre><span>Returns true if the vectors are identical.</span></li>
+            <li><pre>nNormalize(v1)</pre><span>Returns the vector with a magnitude of 1.</span></li>
+            <li><pre>nMag(v1)</pre><span>Returns the magnitude of the vector.</span></li>
+            <li><pre>nMagSq(v1)</pre><span>Returns the magnitude squared of the vector, for use when comparing the magnitude of two vectors.</span></li>
+        </ul>
+        <p>If you would like to reccomend an improvement or contribute something yourself, we welcome it! Drop by the <a href="https://github.com/Smilebags/p5.dimensions.js">GitHub Repo</a> and start a conversation!</p>
+        <footer>
+            <p>Created and maintained by <a href="https://github.com/Smilebags">Smilebags</a> and <a href="https://github.com/max0410">Max Segal</a></p>
+
+        </footer>
+    </div>
+    <script language="javascript" type="text/javascript" src="sketch.js"></script>
+</body>
+
+</html>
