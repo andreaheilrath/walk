@@ -3,11 +3,11 @@ import time
 import math as np
 from open_csv import open_csv
 t=1
-
+started=0
 
 
 def setup():
-    size(800, 800)
+    size(400, 750)
     no_stroke()
     background(0)
 
@@ -22,9 +22,8 @@ def draw():
     global last_pos
     global curr_pos
     if t==1:
-        background(0)
-    t+=1
-    print(t)
+        background(30,20,30)
+    print(started)
     r=lines[t][-1]*10+120
     g=(lines[t][-1]*25)
     b=(lines[t][-1]*10)
@@ -37,11 +36,14 @@ def draw():
     if b > 255:
         b=255
     
-    fill(r, g, b, 200)
+    fill(r, g, b, 140)
     circle_size = round(lines[t][-1]/3+1)
     curr_pos = (round(t*width/2/len(lines)*np.sin(t/4)+width/2), round(t*width/2/len(lines)*np.cos(t/4)+height/2))
-    circle(curr_pos[0], curr_pos[1], circle_size*10)
+    if started==1:
+        t+=1
+        circle(curr_pos[0], curr_pos[1], circle_size*10)
     last_pos = curr_pos
-def key_pressed(event):
-    background(204)
+def mouse_pressed(event):
+    global started
+    started=1
 run()
