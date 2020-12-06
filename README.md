@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 #Traces
+=======
+# traces
+
+>>>>>>> 90f357e058a48de6c137dac750205097d7ffc07f
 An app to motivate people to move. Every exercise will lead to a unique artwork, defined by data generated during the activity.
 ## Motivation
 Many people have problems with mental and physical health due to isolation and working at home especially in times of the current pandemic.
@@ -46,12 +51,17 @@ We wanted to build a preferably barrier-free and user friendly app, so we need t
 ## resources
 
 ### benefits of walking
+
+#### general
 * [Importance of Walking to Public Health](https://onwardsoutdoors.com/wp-content/uploads/2019/05/The_Importance_of_Walking_to_Public_Health.2.pdf)
 * [Benefits of Walking](https://www.consumerreports.org/exercise-fitness/benefits-of-walking/)
+* [harvard - walking your steps to health](https://www.health.harvard.edu/staying-healthy/walking-your-steps-to-health)
+* [nbc news](https://www.nbcnews.com/better/health/why-walking-most-underrated-form-exercise-ncna797271)
+
+#### scientific papers
 * [The effect of a pedometer-based community walking intervention "Walking for Wellbeing in the West" on physical activity levels and health outcomes: a 12-week randomized controlled trial](https://link.springer.com/article/10.1186/1479-5868-5-44)
-* [The Positive Effect of Walkingon Creative Thinking](https://www.apa.org/pubs/journals/releases/xlm-a0036577.pdf)
-
-
+* [Give Your Ideas Some Legs: The Positive Effect of Walking
+on Creative Thinking](https://www.apa.org/pubs/journals/releases/xlm-a0036577.pdf)
 
 ### tools
 * [p5](https://p5js.org)
