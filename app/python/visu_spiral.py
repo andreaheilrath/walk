@@ -35,7 +35,7 @@ def draw():
         g=0
     if b > 255:
         b=255
-    
+
     fill(r, g, b, 140)
     circle_size = round(lines[t][-1]/3+1)
     curr_pos = (round(t*width/2/len(lines)*np.sin(t/4)+width/2), round(t*width/2/len(lines)*np.cos(t/4)+height/2))
@@ -47,3 +47,4 @@ def mouse_pressed(event):
     global started
     started=1
 run()
+
