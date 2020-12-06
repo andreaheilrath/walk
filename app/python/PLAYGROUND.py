@@ -9,7 +9,7 @@ t=1
 def setup():
     size(800, 800)
     no_stroke()
-    background(204)
+    background(1)
 
 lines = open_csv()
 last_size = 1
@@ -17,6 +17,8 @@ last_pos = ((lines[1][1]*1000+lines[1][0])%width, (lines[1][2]*1000+lines[1][0])
 curr_pos = last_pos
 
 def draw():
+#    background(0)
+
     global t
     global last_pos
     global curr_pos
@@ -33,7 +35,7 @@ def draw():
         g=0
     if b > 255:
         b=255
-    
+
     fill(r, g, b, 140)
     circle_size = round(lines[t][-1]/3+1)
     curr_pos = (round(t*width/2/len(lines)*np.sin(t/4)+width/2), round(t*width/2/len(lines)*np.cos(t/4)+height/2))
