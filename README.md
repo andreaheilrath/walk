@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-#Traces
-=======
+
 # traces
 
 >>>>>>> 90f357e058a48de6c137dac750205097d7ffc07f
